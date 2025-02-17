@@ -36,6 +36,7 @@ RUN if $(uname -a | grep -q 'aarch'); then \
     && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
     && chmod 700 get_helm.sh \
     && ./get_helm.sh --version ${HELM_VERSION} \
-    && curl -o kubectl "curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.7/2024-12-12/bin/linux/${ARCH}/kubectl" \
+    && curl -o kubectl "https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.7/2024-12-12/bin/linux/${ARCH}/kubectl" \
     && chmod +x ./kubectl \
-    && cp ./kubectl /usr/local/bin/kubectl     
+    && cp ./kubectl /usr/local/bin/kubectl
+
